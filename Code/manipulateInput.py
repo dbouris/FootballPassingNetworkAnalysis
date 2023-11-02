@@ -168,6 +168,9 @@ if __name__ == "__main__":
     liverpool_players_full = normalizeMetrics(liverpool_players_full)
     tottenham_players_full = normalizeMetrics(tottenham_players_full)
 
+    liverpool_players_full['nodesize'] = 400
+    tottenham_players_full['nodesize'] = 400
+
     # export the files
     exportFile('liverpool_players_data', liverpool_players_full, team_1)
     exportFile('liverpool_passes_data', liverpool_passes_full, team_1)

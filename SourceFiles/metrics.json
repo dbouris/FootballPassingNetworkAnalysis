@@ -1,0 +1,12 @@
+{
+    "Weighted Degree" : "Weighted Degree",
+    "Weighted In-Degree" : "weighted indegree",
+    "Weighted Out-Degree" : "weighted outdegree",
+    "Closeness Centrality" : "closnesscentrality",
+    "Betweenness Centrality" : "betweenesscentrality",
+    "Eigen Centrality" : "eigencentrality",
+    "PageRank" : "pageranks",
+    "Bridging Centrality - Global Bridges" : "bridgingcentrality",
+    "Bridging Coefficient - Local Bridges" : "bridgingcoefficient",
+    "Node Clustering Coefficient" : "clustering"
+}

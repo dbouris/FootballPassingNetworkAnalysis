@@ -1,4 +1,4 @@
-{
+{   "Passing Network" : "nodesize",
     "Weighted Degree" : "Weighted Degree",
     "Weighted In-Degree" : "weighted indegree",
     "Weighted Out-Degree" : "weighted outdegree",
@@ -8,5 +8,8 @@
     "PageRank" : "pageranks",
     "Bridging Centrality - Global Bridges" : "bridgingcentrality",
     "Bridging Coefficient - Local Bridges" : "bridgingcoefficient",
-    "Node Clustering Coefficient" : "clustering"
+    "Node Clustering Coefficient" : "clustering",
+    "Modularity" : "modularity_class",
+    "Bridging Centrality" : "bridgingcentrality",
+    "Bridging Coefficient" : "bridgingcoefficient"
 }

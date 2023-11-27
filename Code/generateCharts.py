@@ -12,6 +12,19 @@ def generateCombinedPassingGraph(team_1_players, team_1_passes, team_2_players, 
     liverpool_passes = team_1_passes
     tottenham_players = team_2_players
     tottenham_passes = team_2_passes
+    s_liverpool = liverpool_players[metric]
+    s_tottenham = tottenham_players[metric]
+    color_liverpool = 'red'
+    color_tottenham = 'blue'
+
+    if metric in ["modularity_class", "bridgingcentrality", "bridgingcoefficient"]:
+        color_liverpool = liverpool_players['modularity_class']
+        color_tottenham = tottenham_players['modularity_class']
+
+        if metric == 'modularity_class':
+            s_liverpool = liverpool_players['nodesize']
+            s_tottenham = tottenham_players['nodesize']
+
 
     
     pitch = Pitch(pitch_type='statsbomb', pitch_color='#22312b', line_color='#c7d5cc')
@@ -42,10 +55,10 @@ def generateCombinedPassingGraph(team_1_players, team_1_passes, team_2_players, 
         pitch.arrows(row.x_source, row.y_source,
                             row.x_target, row.y_target, 
                             color='grey', width=row.Weight, ax=axs['pitch'][1])
-    print("Liverpool passes added")
+
     # add the players                   
-    pitch.scatter(liverpool_players.x, liverpool_players.y, s= liverpool_players[metric], ## dynamically pick the color, based on the metric visualized 
-            color='red', edgecolors='black', linewidth=1, alpha=1, ax=axs['pitch'][1])
+    pitch.scatter(liverpool_players.x, liverpool_players.y, s= s_liverpool, ## dynamically pick the color, based on the metric visualized 
+            c=color_liverpool, edgecolors='black', linewidth=1, alpha=1, ax=axs['pitch'][1])
     # add the player names 
     for index, row in liverpool_players.iterrows():
         pitch.annotate(row.label, xy=(row.x-3, row.y-3), c='white', va='center',
@@ -59,8 +72,8 @@ def generateCombinedPassingGraph(team_1_players, team_1_passes, team_2_players, 
                             row.x_target, row.y_target, 
                             color='grey', width=row.Weight, ax=axs['pitch'][0])
     # add the players                   
-    pitch.scatter(tottenham_players.x, tottenham_players.y, s= tottenham_players[metric],
-            color='blue', edgecolors='black', linewidth=1, alpha=1, ax=axs['pitch'][0])
+    pitch.scatter(tottenham_players.x, tottenham_players.y, s= s_tottenham,
+            c=color_tottenham, edgecolors='black', linewidth=1, alpha=1, ax=axs['pitch'][0])
     # add the player names
     for index, row in tottenham_players.iterrows():
         pitch.annotate(row.label, xy=(row.x-3, row.y-3), c='white', va='center', ## dynamically pick the color, based on the metric visualized 
@@ -90,7 +103,7 @@ if __name__ == "__main__":
     print(metrics)
 
 
-## FIX THE ITERATION
+    ## FIX THE ITERATION
 
     for index, row in metrics.iterrows():
         print(row[0], index)

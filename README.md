@@ -12,13 +12,15 @@ The analysis performed **aims to answer the following questionsI** regarding the
 - What alternative tactics could be followed?
 - Ultimately, is ball possession a significant factor in winning a football game?
 
+The **full report** of the analysis can be found [here](/2019%20Champions%20League%20Final.pdf).
+
 ## Dataset
 
 The dataset utilized for this analysis was sourced from StatsBomb's Open Data platform, a reputable and comprehensive resource for football-related statistics. More specifically, StatsBomb, one of the leading companies in the collection and analysis of data from sports events, freely provides statistics for passes, interceptions, and crosses for a total of 4 Champions League finals in its GitHub repository [statsbomb/open-data](https://github.com/statsbomb/open-data).
 
 ## Passing Network Visualization
 
-Matplotlib, in conjunction with [mpsoccer](https://github.com/andrewRowlinson/mplsoccer), was employed for visualizing the passing networks. The latter is a comprehensive library specifically designed for visualizing soccer teams on the pitch, offering a holistic approach to football data visualization.
+Matplotlib, in conjunction with [mpsoccer](https://github.com/andrewRowlinson/mplsoccer), was employed for visualizing the passing networks. The latter is a comprehensive library specifically designed for visualizing soccer teams on the pitch, offering a holistic approach to football data visualization. The code which generates the passing networks can be found in the [`generateCharts.py`](/Code/generateCharts.py) file. 
 
 <br>
 
@@ -42,10 +44,14 @@ Insights were extracted from the passing networks by applying popular network sc
 - Bridging Coefficient
 
 
-# Sample Passing Networks 
+## Sample Passing Networks 
 
-![](/Output/Weighted%20Degree.png)
+![Passing Network : Weighted Degree](/Output/Weighted%20Degree.png)
 
 <br>
 
-![](/Output/Modularity.png)
+![Passing Network : Modularity](/Output/Modularity.png)
+
+## Author 
+
+- [Dimitris Bouris](https://github.com/dbouris)
